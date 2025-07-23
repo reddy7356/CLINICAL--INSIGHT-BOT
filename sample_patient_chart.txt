@@ -1,0 +1,74 @@
+PATIENT: Jane Smith
+AGE: 68 years old
+WEIGHT: 72 kg
+HEIGHT: 162 cm
+GENDER: Female
+
+MEDICAL RECORD NUMBER: 12345678
+DATE: January 15, 2024
+
+CHIEF COMPLAINT:
+Scheduled for elective laparoscopic cholecystectomy
+
+HISTORY OF PRESENT ILLNESS:
+68-year-old female with symptomatic cholelithiasis. Recurrent episodes of biliary colic over the past 6 months. No acute cholecystitis. Candidate for laparoscopic approach.
+
+PAST MEDICAL HISTORY:
+- Hypertension (well-controlled)
+- Type 2 Diabetes Mellitus 
+- Coronary Artery Disease, status post PCI 2019
+- Chronic kidney disease stage 3
+- Sleep apnea on CPAP
+- GERD
+
+MEDICATIONS:
+- Metoprolol 50mg BID
+- Lisinopril 10mg daily  
+- Insulin glargine 24 units nightly
+- Metformin 1000mg BID
+- Aspirin 81mg daily
+- Atorvastatin 40mg daily
+- Omeprazole 20mg daily
+
+ALLERGIES: 
+Penicillin (rash), Morphine (nausea)
+
+SOCIAL HISTORY:
+Non-smoker. Occasional alcohol use. Lives with spouse.
+
+PHYSICAL EXAMINATION:
+Vital Signs: BP 142/78, HR 68, RR 18, O2 Sat 96% on RA
+General: Alert, cooperative, no acute distress
+Airway: Mallampati Class II, good mouth opening 4cm, full neck mobility
+Cardiovascular: Regular rate and rhythm, no murmurs
+Pulmonary: Clear to auscultation bilaterally
+Abdomen: Soft, mild RUQ tenderness
+
+LABORATORY VALUES:
+CBC: Hemoglobin 11.8 g/dL, Platelets 245 K/uL, WBC 6.2
+BMP: Creatinine 1.4 mg/dL, Glucose 156 mg/dL, Na 138, K 4.1
+Coagulation: INR 1.0, PT 11.2, PTT 28
+
+ASA PHYSICAL STATUS: ASA III
+
+PLANNED PROCEDURE:
+Laparoscopic cholecystectomy
+Surgeon: Dr. Johnson
+Estimated duration: 1.5-2 hours
+Position: Supine with reverse Trendelenburg
+Expected blood loss: minimal
+
+NPO STATUS: NPO since midnight (12 hours)
+
+ANESTHESIA PLAN:
+General anesthesia with endotracheal intubation
+Standard ASA monitors
+Peripheral IV access
+Post-operative: PACU recovery, home same day if stable
+
+SPECIAL CONSIDERATIONS:
+- Continue metoprolol morning of surgery
+- Hold Lisinopril morning of surgery  
+- Last insulin dose given as scheduled
+- OSA - plan for careful emergence and monitoring
+- CKD - avoid nephrotoxic agents, consider fluid management 

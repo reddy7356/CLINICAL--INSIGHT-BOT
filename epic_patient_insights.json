@@ -1,0 +1,76 @@
+{
+  "patient_info": {
+    "age": "41 years",
+    "weight": "Not Found",
+    "height": "Not Found",
+    "gender": "Female"
+  },
+  "pre_operative": {
+    "asa_status": "Not Found",
+    "allergies": "Not Found",
+    "medications": {
+      "anticoagulants": "Not Found",
+      "insulin": "Not Found",
+      "cardiac_meds": "Not Found",
+      "other_relevant": "Not Found"
+    },
+    "comorbidities": {
+      "cardiac": "Not Found",
+      "pulmonary": "Not Found",
+      "renal": "Not Found",
+      "hepatic": "Not Found",
+      "neurologic": "Not Found",
+      "endocrine": "diabetes"
+    },
+    "airway_assessment": {
+      "mallampati": "Not Found",
+      "mouth_opening": "Not Found",
+      "neck_mobility": "Not Found",
+      "thyromental_distance": "Not Found",
+      "dentition": "Not Found",
+      "predicted_difficulty": "Not Found"
+    },
+    "laboratory_values": {
+      "hemoglobin": "Not Found",
+      "platelet_count": "Not Found",
+      "inr_pt_ptt": "Not Found",
+      "creatinine": "Not Found",
+      "glucose": "Not Found",
+      "electrolytes": "Not Found"
+    },
+    "device_implants": "Not Found",
+    "npo_status": "Not Found"
+  },
+  "surgical_plan": {
+    "procedure": "Not Found",
+    "surgical_position": "Not Found",
+    "estimated_duration": "Not Found",
+    "surgeon": "Not Found",
+    "approach": "Not Found"
+  },
+  "intra_operative": {
+    "special_monitoring": "Not Found",
+    "vascular_access": "Not Found",
+    "blood_products": "Not Found",
+    "regional_anesthesia": "Not Found",
+    "temperature_management": "Not Found",
+    "fluid_management": "Not Found"
+  },
+  "post_operative": {
+    "planned_disposition": "Not Found",
+    "pain_management": "Not Found",
+    "icu_monitoring": "Not Found",
+    "ventilator_weaning": "Not Found"
+  },
+  "risk_assessment": {
+    "aspiration_risk": "Not Found",
+    "difficult_airway": "Not Found",
+    "cardiac_risk": "Not Found",
+    "bleeding_risk": "Not Found"
+  },
+  "metadata": {
+    "processed_timestamp": "2025-06-24T16:31:09.258739",
+    "version": "1.0",
+    "extraction_confidence": "Automated extraction - verify critical values"
+  }
+}

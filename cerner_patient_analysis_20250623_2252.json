@@ -1,0 +1,81 @@
+{
+  "patient_id": "12724066",
+  "raw_text": "PATIENT: NANCYS II SMARTS\nAGE: 35 years old\nGENDER: Male\n\nMEDICATIONS:\n- NS drip 0.9 % - 200 mL/hr, IV\n- acetaminophen - 650 mg = 2 tab, Oral, every 4 hr, PRN: other (see comment)\n- acetaminophen (Tylenol) - 1*2 perday, 0 Refill(s)\n- acetaminophen/aspirin/caffeine (Excedrin) - 1 tab, Oral, every 6 hr, PRN: headache\n- amLODIPine - 0 Refill(s)\n- aspirin (aspirin 81 mg oral tablet, chewable) - 10 g, Oral, every day at bedtime, PRN: pain\n- atorvastatin (Lipitor 80 mg oral tablet) - 80 mg = 1 tab, Oral, Daily, 90 tab, 0 Refill(s)\n- atorvastatin (Lipitor 10 mg oral tablet) - 10 mg = 1 tab, Oral, Daily, 30 tab, 0 Refill(s)\n- chlorothiazide - 0 Refill(s)\n- chlorothiazide - 20 mg, for 2 months, Give 1 dose every 1 day for 2 months., 0 Refill(s)\n\nALLERGIES:\n- Allergy to piretanide\n- Allergy to nicardipine (rash)\n- Allergy to dust\n- Family Ceratopogonidae\n- Allergy to wool\n\nLABORATORY VALUES:\nTemperature Oral: 28 degC\nNumeric Rating Pain Score: 4\nHeight/Length Measured: 165.1 cm\nTemperature Skin: 36.8 degC\nPeripheral Pulse Rate: 86 bpm\nRespiratory Rate: 18 br/min\nEstimated Creatinine Clearance: 305.03 mL/min\nPeripheral Pulse Rate: 78 bpm\nTemperature Oral: 37.4 degC\nTemperature Oral: 30 degC\nTemperature Oral: 33.8 degC\nTemperature Oral: 33 degC\nTemperature Oral: 39 degC\nOxygen Saturation: 91 %\nOxygen Saturation: 91 %\n",
+  "insights": {
+    "patient_info": {
+      "age": "35 years",
+      "weight": "Not Found",
+      "height": "165.1 cm",
+      "gender": "Male"
+    },
+    "pre_operative": {
+      "asa_status": "Not Found",
+      "allergies": "- Allergy To Piretanide",
+      "medications": {
+        "anticoagulants": "Aspirin",
+        "insulin": "Not Found",
+        "cardiac_meds": "Amlodipine",
+        "other_relevant": "Not Found"
+      },
+      "comorbidities": {
+        "cardiac": "Not Found",
+        "pulmonary": "Not Found",
+        "renal": "Not Found",
+        "hepatic": "Not Found",
+        "neurologic": "Not Found",
+        "endocrine": "Not Found"
+      },
+      "airway_assessment": {
+        "mallampati": "Not Found",
+        "mouth_opening": "Not Found",
+        "neck_mobility": "Not Found",
+        "thyromental_distance": "Not Found",
+        "dentition": "Not Found",
+        "predicted_difficulty": "Not Found"
+      },
+      "laboratory_values": {
+        "hemoglobin": "Not Found",
+        "platelet_count": "Not Found",
+        "inr_pt_ptt": "Not Found",
+        "creatinine": "Not Found",
+        "glucose": "Not Found",
+        "electrolytes": "Not Found"
+      },
+      "device_implants": "Not Found",
+      "npo_status": "Not Found"
+    },
+    "surgical_plan": {
+      "procedure": "Not Found",
+      "surgical_position": "Not Found",
+      "estimated_duration": "Not Found",
+      "surgeon": "Not Found",
+      "approach": "Not Found"
+    },
+    "intra_operative": {
+      "special_monitoring": "Not Found",
+      "vascular_access": "Not Found",
+      "blood_products": "Not Found",
+      "regional_anesthesia": "Not Found",
+      "temperature_management": "Not Found",
+      "fluid_management": "Not Found"
+    },
+    "post_operative": {
+      "planned_disposition": "Not Found",
+      "pain_management": "Not Found",
+      "icu_monitoring": "Not Found",
+      "ventilator_weaning": "Not Found"
+    },
+    "risk_assessment": {
+      "aspiration_risk": "Not Found",
+      "difficult_airway": "Not Found",
+      "cardiac_risk": "Not Found",
+      "bleeding_risk": "Not Found"
+    },
+    "metadata": {
+      "processed_timestamp": "2025-06-23T22:52:50.507158",
+      "version": "1.0",
+      "extraction_confidence": "Automated extraction - verify critical values"
+    }
+  },
+  "timestamp": "2025-06-23T22:52:50.508121"
+}
