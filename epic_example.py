@@ -25,6 +25,7 @@ def main():
     client_id = os.getenv('EPIC_CLIENT_ID')
     client_secret = os.getenv('EPIC_CLIENT_SECRET')
     fhir_base_url = os.getenv('EPIC_FHIR_URL', 'https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4/')
+    redirect_uri = os.getenv('EPIC_REDIRECT_URI', 'http://localhost:8080/callback')
     
     if not client_id:
         print("\n2. Setting up EPIC credentials...")
@@ -45,6 +46,7 @@ def main():
     print(f"\n2. Initializing EPIC FHIR client...")
     print(f"   Client ID: {client_id}")
     print(f"   FHIR Base URL: {fhir_base_url}")
+    print(f"   Redirect URI: {redirect_uri}")
     
     try:
         # Initialize client
@@ -63,7 +65,8 @@ def main():
         print("\n4. Starting OAuth authorization flow...")
         client_instance, state = start_epic_oauth_flow(
             client_id=client_id,
-            fhir_base_url=fhir_base_url
+            fhir_base_url=fhir_base_url,
+            redirect_uri=redirect_uri
         )
         
         if client_instance and state:

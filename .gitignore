@@ -24,6 +24,7 @@ wheels/
 venv/
 env/
 ENV/
+.venv/
 
 # IDE
 .vscode/
@@ -48,3 +49,9 @@ config.json
 
 # Logs
 *.log 
+
+# Generated outputs
+case_report_insights/
+*patient_insights_*.json
+*demo_patient_insights_*.json
+*real_patient_insights_*.json

@@ -1,0 +1,6 @@
+# EPIC FHIR Demo Requirements
+
+# Minimal dependency needed to import and use EPIC integration utilities
+requests>=2.28.0
+
+

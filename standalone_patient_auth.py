@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+y#!/usr/bin/env python3
 """
 Standalone Patient Authorization for Cerner Sandbox
 Uses launch/patient scope to allow patient selection

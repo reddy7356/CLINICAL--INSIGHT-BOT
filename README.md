@@ -235,6 +235,17 @@ def assess_risks(self, text: str) -> None:
 - Plan pain management strategy
 - Assess ventilator weaning potential
 
+## EPIC Demo (Sandbox)
+
+Run a complete demo of the Clinical Insight Bot using a synthetic EPIC patient (no OAuth, no network calls):
+
+```bash
+pip install -r requirements_epic.txt
+python epic_demo_patient.py
+```
+
+This will print anesthesia-focused insights and save them to a timestamped JSON file like `epic_demo_patient_insights_YYYYMMDD_HHMMSS.json`.
+
 ## Support
 
 For questions, issues, or feature requests, please refer to the documentation or contact the development team.

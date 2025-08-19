@@ -13,12 +13,14 @@ def test_epic_oauth():
     
     print("=== Epic OAuth Troubleshooting ===\n")
     
-    # Get credentials
+    # Get credentials from environment
     client_id = os.getenv('EPIC_CLIENT_ID')
-    fhir_url = os.getenv('EPIC_FHIR_URL')
+    fhir_url = os.getenv('EPIC_FHIR_URL', 'https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4/')
+    redirect_uri = os.getenv('EPIC_REDIRECT_URI', 'http://localhost:8080/callback')
     
     print(f"1. Client ID: {client_id}")
-    print(f"2. FHIR URL: {fhir_url}")
+    print(f"2. FHIR Base URL: {fhir_url}")
+    print(f"3. Redirect URI: {redirect_uri}")
     
     if not client_id:
         print("❌ EPIC_CLIENT_ID not set!")
@@ -28,7 +30,7 @@ def test_epic_oauth():
     client = EpicFHIRClient(
         client_id=client_id,
         fhir_base_url=fhir_url,
-        redirect_uri="http://localhost:8080/callback"  # Standard redirect
+        redirect_uri=redirect_uri
     )
     
     try:
@@ -40,16 +42,19 @@ def test_epic_oauth():
         
         print("\n4. Generating OAuth URL...")
         
-        # Use simpler scopes to avoid issues
-        simple_scopes = [
+        # Use simpler scopes to avoid issues; allow override via EPIC_SCOPES
+        default_scopes = [
             'patient/Patient.read',
             'patient/Observation.read',
             'patient/Condition.read',
             'openid',
-            'fhirUser'
+            'fhirUser',
+            'online_access'
         ]
+        scopes_env = os.getenv('EPIC_SCOPES')
+        simple_scopes = scopes_env.split() if scopes_env else default_scopes
         
-        auth_url, state = client.get_authorization_url(scopes=simple_scopes)
+        auth_url, state = client.get_authorization_url(scopes=simple_scopes, use_pkce=True)
         
         print("✅ OAuth URL generated successfully")
         print(f"\n5. Authorization URL:")
@@ -76,8 +81,8 @@ def test_epic_oauth():
         simple_params = {
             'client_id': client_id,
             'response_type': 'code',
-            'redirect_uri': 'http://localhost:8080/callback',
-            'scope': 'patient/Patient.read openid fhirUser',
+            'redirect_uri': redirect_uri,
+            'scope': ' '.join([simple_scopes[0], 'openid', 'fhirUser']),
             'state': 'test123',
             'aud': fhir_url
         }
@@ -88,6 +93,7 @@ def test_epic_oauth():
         print(f"\n8. Alternative redirect URIs to try:")
         print("   - https://fhir.epic.com/test/smart")
         print("   - http://localhost:8080/callback")
+        print(f"   - EPIC_REDIRECT_URI (current): {redirect_uri}")
         
         return True
         

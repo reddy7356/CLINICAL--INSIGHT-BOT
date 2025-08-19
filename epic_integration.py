@@ -6,6 +6,7 @@ Connects to EPIC's FHIR APIs using SMART on FHIR authentication to extract patie
 
 import json
 import base64
+import hashlib
 import requests
 import secrets
 import urllib.parse
@@ -44,6 +45,8 @@ class EpicFHIRClient:
         self.refresh_token = None
         self.token_expires_at = None
         self.patient_id = None
+        # PKCE support
+        self._pkce_code_verifier = None
         
         # Initialize Clinical Insight Bot
         self.insight_bot = ClinicalInsightBot()
@@ -75,7 +78,7 @@ class EpicFHIRClient:
             raise Exception(f"Failed to discover EPIC SMART configuration: {e}")
     
     def get_authorization_url(self, scopes: List[str] = None, 
-                            launch_context: str = None) -> tuple:
+                            launch_context: str = None, use_pkce: bool = True) -> tuple:
         """
         Generate OAuth authorization URL for EPIC SMART on FHIR.
         
@@ -117,6 +120,17 @@ class EpicFHIRClient:
             'state': state,
             'aud': self.fhir_base_url
         }
+
+        # Optionally add PKCE (recommended for public clients)
+        if use_pkce:
+            # RFC 7636 S256
+            # Generate a high-entropy code_verifier
+            self._pkce_code_verifier = secrets.token_urlsafe(64)[:128]
+            # Create code_challenge = BASE64URL-ENCODE(SHA256(verifier)) without padding
+            sha256_digest = hashlib.sha256(self._pkce_code_verifier.encode('ascii')).digest()
+            code_challenge = base64.urlsafe_b64encode(sha256_digest).decode('ascii').rstrip('=')
+            params['code_challenge'] = code_challenge
+            params['code_challenge_method'] = 'S256'
         
         # Add launch context if provided (for EHR launch)
         if launch_context:
@@ -150,6 +164,10 @@ class EpicFHIRClient:
             'redirect_uri': self.redirect_uri,
             'client_id': self.client_id
         }
+
+        # Include PKCE verifier if used during authorization
+        if self._pkce_code_verifier:
+            data['code_verifier'] = self._pkce_code_verifier
         
         headers = {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -488,7 +506,7 @@ class EpicFHIRClient:
 
 
 def start_epic_oauth_flow(client_id: str, fhir_base_url: str = None, 
-                         scopes: List[str] = None) -> tuple:
+                         scopes: List[str] = None, redirect_uri: str = None) -> tuple:
     """
     Helper function to start OAuth flow for EPIC integration.
     
@@ -496,6 +514,7 @@ def start_epic_oauth_flow(client_id: str, fhir_base_url: str = None,
         client_id: OAuth client ID from EPIC registration
         fhir_base_url: FHIR base URL (defaults to EPIC sandbox)
         scopes: List of scopes to request
+        redirect_uri: Optional OAuth redirect URI to override default
         
     Returns:
         Tuple of (EpicFHIRClient instance, state parameter)
@@ -503,7 +522,7 @@ def start_epic_oauth_flow(client_id: str, fhir_base_url: str = None,
     if not fhir_base_url:
         fhir_base_url = "https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4/"
     
-    client = EpicFHIRClient(client_id=client_id, fhir_base_url=fhir_base_url)
+    client = EpicFHIRClient(client_id=client_id, fhir_base_url=fhir_base_url, redirect_uri=redirect_uri)
     
     # Test connection first
     print("Testing connection to EPIC FHIR server...")

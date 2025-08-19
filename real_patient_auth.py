@@ -130,14 +130,14 @@ def main():
                     if value and value != "Not Found":
                         print(f"  {key}: {value}")
             
-                                      # Save results
-             save_results = input("\n💾 Save results to file? (y/n): ").lower()
-             if save_results == 'y':
-                 from datetime import datetime
-                 filename = f"real_patient_insights_{patient_id}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
-                 with open(filename, 'w') as f:
-                     json.dump(insights, f, indent=2)
-                 print(f"✅ Results saved to {filename}")
+            # Save results
+            save_results = input("\n💾 Save results to file? (y/n): ").lower()
+            if save_results == 'y':
+                from datetime import datetime
+                filename = f"real_patient_insights_{patient_id}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+                with open(filename, 'w') as f:
+                    json.dump(insights, f, indent=2)
+                print(f"✅ Results saved to {filename}")
             
             print("\n🎉 Real patient data analysis complete!")
             
